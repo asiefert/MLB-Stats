@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,700&display=swap');
+
+html, body {
+  display: grid;
+  margin: 0;
+  grid-template-columns: auto;
+  grid-gap: 0px;
+  flex: 1;
+  background-color: #041E42;
+  color: #FFF;
+  font-family: 'Raleway', sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+ 
+main {
+  margin-top:2.5em;
+}
+
+.banner {
+  background-color: #041E42;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.50);
+  height: 60px;
+}
+
+.banner-container {
+  display: inline-block;
+  width: 100%;
+}
+
+.nav-logo {
+  float: left;
+  padding: 0;
+}
+
+#logo {
+  padding-left: 0.4em;
+  width: 60px;
+  height: 60px;
+}
+
+p.title {
+  line-height: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-right: calc(60px + 0.4em);
+}
+
+#errorContainer {
+  margin: 0;
+}
+
+/*Default state when page is loaded*/
+#errorMsg {
+  position: absolute;
+  opacity: 0;
+  top: -200px;
+  width: auto;
+  padding: 10px 5px;
+  color: #FFFFFF;
+  background-color: #BF4022;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23), 0 6px 6px rgba(0, 0, 0, 0.50);
+
+}
+
+/* Show the error message */
+#errorMsg.show {
+  top: 0px;
+  opacity: 100;
+  animation: 300ms slide-down;
+}
+
+/*Hide the error message */
+#errorMsg.hide {
+  position: absolute;
+  opacity: 0;
+  top: -200px;
+  width: auto;
+  padding: 10px 5px;
+  color: #FFFFFF;
+  background-color: #BF4022;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23), 0 6px 6px rgba(0, 0, 0, 0.50);
+  animation: 300ms slide-up;
+}
+
+.date-select {
+  padding: 0 60px 0 0;
+  width: 150px;
+  height: auto;
+}
+
+.date-select .label {
+  padding-left: 0.1em;
+  display: inline-block;
+  font-weight: 500;
+  width: 50px;
+  height: 50px;
+}
+
+.select {
+  padding: 5px 10px;
+  margin-left: 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+
+}
+
+.select:focus {
+  outline: 0;
+  border: 2px solid #BF4022;
+
+}
+
+.btn {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  width: 100px;
+  height: 50px;
+  background-color: #BF4022;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn:active {
+  box-shadow: none;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23) inset, 0 6px 6px rgba(0, 0, 0, 0.50) inset;
+
+}
+
+.btn:focus {
+  border: 1px solid #FFFFFF;
+  outline: 0;
+}
+
+#retrieveBtn {
+  align-items: center;
+  margin-top: 10px;
+}
+
+.results {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#controls {
+  justify-content: flex-start;
+  padding: 0;
+}
+
+#content .btn:not(#prevGame) {
+  margin-left: 10px;
+}
+
+#nextGame, #saveGame {
+  margin-left: 0.4em;
+}
+
+.text-input {
+  width: 298px;
+  outline: 0;
+  padding: 5px 5px;
+  border: 1px solid #000;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.text-input:focus {
+  box-shadow: none;
+  border: 2px solid #bb1818;
+}
+
+@keyframes slide-down {
+  0% {
+    top: -100px;
+    opacity: 0;
+  }
+
+  100% {
+    top: 0px;
+    opacity: 100;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    top: 0px;
+    opacity: 100;
+  }
+
+  100% {
+    top: -100px;
+    opacity: 0;
+  }
+}
+
+@media only screen and (min-width:768px) {
+  .banner-container {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .banner-container {
+    padding-left: 0;
+    font-size: 0.9em;
+  }
+
+  .container {
+    padding-left: 0;
+  }
+}
+
+@media only screen and (min-width:500px) and (max-width: 767px) {
+  .results {
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  .container {
+    margin-left: 0;
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:360px) {
+  main {
+    margin-top:0.125em;
+  }
+}
